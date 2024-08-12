@@ -3,8 +3,8 @@ This code is used to activate a local server, and then I will use Postman to act
 '''
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from app.torch_utils import CNN_model9, save_mel_spec, model_predict
-from app.observe_audio_function_ver3 import SAMPLE_RATE
+from torch_utils import CNN_model9, save_mel_spec, model_predict
+from observe_audio_function_ver3 import SAMPLE_RATE
 import os
 import matplotlib
 import torch
@@ -13,9 +13,9 @@ import torch
 # To prevent warning from "Starting a Matplotlib GUI outside of the main thread will likely fail."
 matplotlib.use('Agg')  # Set the backend to 'Agg' before importing pyplot
 
-AUDIO_FOLDER_NAME = "data/audio_files"
-IMAGE_FOLDER_NAME = "data/image_files"
-PTH_PATH = "app/model_9_ENG_ver1.pth"
+AUDIO_FOLDER_NAME = "../data/audio_files"
+IMAGE_FOLDER_NAME = "../data/image_files"
+PTH_PATH = "model_9_ENG_ver1.pth"
 
 model = None
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
