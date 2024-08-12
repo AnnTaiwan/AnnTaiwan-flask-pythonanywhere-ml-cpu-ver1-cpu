@@ -3,7 +3,7 @@ This code is used to activate a local server, and then I will use Postman to act
 '''
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from torch_utils import CNN_model9, save_mel_spec, model_predict
+from torch_utils_ver2 import CNN_model9, save_mel_spec, model_predict
 from observe_audio_function_ver3 import SAMPLE_RATE
 import os
 import matplotlib
